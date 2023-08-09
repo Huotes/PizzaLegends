@@ -14,7 +14,7 @@ class Overworld {
 
             //desenha o layer inferior
             this.map.drawLowerImage(this.ctx);
-
+ 
             //desenha os objetos do jogo
             Object.values(this.map.gameObjects).forEach(object => {
                object.update({
