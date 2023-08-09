@@ -12,41 +12,19 @@ class Overworld {
        };
        image.src = "/images/maps/DemoLower.png";
 
-       const x = 5;
-       const y = 6;
-
-       const shadow = new Image();
-       shadow.onload = () => {
-        this.ctx.drawImage(
-            shadow,
-            0, //corte esquerdo
-            0, //corte superior
-            32, //largura do corte
-            32, //Altura do corte
-            x * 16 - 8,
-            y * 16 - 18,
-            32,
-            32
-            
-            )
-       }
-       shadow.src = "/images/characters/shadow.png";
-
-       const hero = new Image();
-       hero.onload = () => {
-        this.ctx.drawImage(
-            hero,
-            0, //corte esquerdo
-            0, //corte superior
-            32, //largura do corte
-            32, //Altura do corte
-            x * 16 - 8,
-            y * 16 - 18,
-            32,
-            32
-            
-            )
-       }
-       hero.src = "/images/characters/people/hero.png";
+       //os objetos do jogo manin
+       const hero = new gameObject({
+        x : 5,
+        y : 16,
+       })
+       const npc1 = new gameObject({
+        x : 7,
+        y : 9,
+        src : "/images/character/people/npc1.png"
+       })
+       setTimeout(() => {
+       hero.sprite.draw(this.ctx);
+       npc1.sprite.draw(this.ctx);
+       }, 200)
     }
 }
