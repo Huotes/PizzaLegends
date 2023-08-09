@@ -17,6 +17,10 @@ class Overworld {
 
             //desenha os objetos do jogo
             Object.values(this.map.gameObjects).forEach(object => {
+               object.update({
+                
+               })
+               
                 object.sprite.draw(this.ctx);
             })
 
